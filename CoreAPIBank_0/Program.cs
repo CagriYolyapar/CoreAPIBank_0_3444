@@ -10,6 +10,23 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(cors =>
+{
+    cors.AddPolicy("YZL3444CorsPolicy", opt =>
+    {
+        opt.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
+
+
+
+// db.Categories.Where(x => x.CategoryName.Contains("Bev")).ToList();
+
+
+
+
+
 builder.Services.AddDbContextPool<MyContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection")));
 
 WebApplication app = builder.Build();

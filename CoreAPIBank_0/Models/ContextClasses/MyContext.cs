@@ -6,6 +6,12 @@ namespace CoreAPIBank_0.Models.ContextClasses
 {
     public class MyContext : DbContext
     {
+
+
+
+
+       
+
         public MyContext(DbContextOptions<MyContext> opt) : base(opt) 
         {
 
